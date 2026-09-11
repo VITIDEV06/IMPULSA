@@ -1,0 +1,8 @@
+# Dependencias (4.8 GB con los binarios del SDK): se reinstalan con npm install
+node_modules/
+
+# Datos sintéticos: se regeneran con `node sembrar.js`
+data/
+
+# Modelos y caché del SDK viven fuera del repo (~/.qvac)
+*.gguf

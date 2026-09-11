@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="es" data-tema="claro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0A3D91">
+<title>IMPULSA — Detecta, orienta, acompaña</title>
+<link rel="icon" type="image/png" sizes="64x64" href="img/favicon.png">
+<link rel="icon" type="image/png" sizes="256x256" href="img/favicon-256.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="description" content="IMPULSA: acompañamiento local para programas de microcrédito. Detecta el riesgo por reglas, orienta con un mentor que funciona sin internet y acompaña con tickets y sesiones.">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+
+<!-- ============ BARRA LATERAL ============ -->
+<nav class="lateral" id="lateral">
+  <a class="marca" href="#" aria-label="IMPULSA — Detecta, orienta, acompaña">
+    <img class="logo-marca logo-clara" src="img/logo-claro.png" alt="IMPULSA">
+    <img class="logo-marca logo-oscura" src="img/logo-oscuro.png" alt="IMPULSA">
+    <small id="subMarca">Detecta · Orienta · Acompaña</small>
+  </a>
+
+  <div class="cambio-cara">
+    <button id="caraAg" class="cara activa" type="button">Agente</button>
+    <button id="caraEmp" class="cara" type="button">Emprendedor</button>
+  </div>
+
+  <div id="navAg">
+    <a class="item" href="#dashboard" data-vista="dashboard"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Dashboard</a>
+    <a class="item" href="#cartera" data-vista="cartera"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>Emprendedores</a>
+    <a class="item" href="#tickets" data-vista="tickets"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg>Tickets<span class="cont" id="contTk" hidden>0</span></a>
+    <a class="item" href="#acompanamiento" data-vista="acompanamiento"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Acompañamiento</a>
+    <a class="item" href="#material" data-vista="material"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h5v18H6a2 2 0 0 1-2-2zM13 3h5a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-5z"/></svg>Material educativo</a>
+    <a class="item" href="#evidencia" data-vista="evidencia"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Evidencia</a>
+  </div>
+
+  <div id="navEmp" hidden>
+    <a class="item" href="#panel" data-vista="panel"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Inicio</a>
+    <a class="item" href="#registrar" data-vista="registrar"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Mi negocio</a>
+    <a class="item" href="#material" data-vista="material"><svg viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h5v18H6a2 2 0 0 1-2 2zM13 3h5a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-5z"/></svg>Aprender</a>
+    <a class="item" href="#mentor" data-vista="mentor"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg>Mentor IA</a>
+    <a class="item" href="#ayuda" data-vista="ayuda"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg>Tickets</a>
+  </div>
+
+  <a class="item" href="#acerca" data-vista="acerca"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 16v-4M12 8h.01"/></svg>Cómo funciona</a>
+
+  <div class="estado">
+    <div class="titulo-estado">Sistema local</div>
+    <div><span class="punto" id="puntoModelo"></span><span id="txtModelo">Cargando…</span></div>
+    <div><span class="punto" id="puntoVision"></span><span id="txtVision">VisionPsy…</span></div>
+    <div><span class="punto" id="puntoMat"></span><span id="txtMat">Material…</span></div>
+    <div><span class="punto offline"></span><span id="txtRed">Sin conexión requerida</span></div>
+    <button class="tema" id="btnTema" type="button">Modo oscuro</button>
+  </div>
+</nav>
+
+<div class="zona">
+  <!-- ============ CABECERA ============ -->
+  <header class="encabezado">
+    <button class="ic-btn abrir-nav" id="btnNav" type="button" aria-label="Menú"><svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    <div class="buscador">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="buscar" placeholder="Buscar emprendedores, tickets, negocios…" autocomplete="off">
+      <div id="resBuscar"></div>
+    </div>
+    <div class="acciones-cab">
+      <button class="ic-btn" id="btnAlertas" type="button" aria-label="Alertas"><svg viewBox="0 0 24 24"><path d="M18 8a6 6 0 1 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/></svg><span class="cont" id="contAlertas" hidden>0</span></button>
+      <button class="ic-btn" id="btnTema2" type="button" aria-label="Cambiar tema"><svg viewBox="0 0 24 24" id="icTema"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8"/></svg></button>
+      <div class="usuario"><span class="av" id="avUsuario">AG</span><span><b id="nomUsuario">Agente de programa</b><small id="rolUsuario">Caja de Ahorros</small></span></div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ DASHBOARD ADMINISTRATIVO ============ -->
+    <section class="vista" id="vista-dashboard">
+      <div class="encabezado-vista">
+        <div><h2 id="saludo">Buenos días</h2><p class="sub">Resumen de la cartera y del estado de los emprendedores del programa.</p></div>
+        <span class="badge neutro" id="fechaHoy"></span>
+      </div>
+
+      <div class="kpis" id="kpis"></div>
+
+      <div class="rejilla-2">
+        <div class="tarjeta">
+          <div class="cab-tarjeta"><h3>Estado de la cartera</h3>
+            <div class="leyenda"><span><i style="background:var(--ok)"></i>Saludables</span><span><i style="background:var(--warn)"></i>En riesgo</span><span><i style="background:var(--danger)"></i>Críticos</span></div>
+          </div>
+          <div class="lienzo" id="gEvolucion"></div>
+        </div>
+        <div class="tarjeta">
+          <div class="cab-tarjeta"><h3>Índice de acompañamiento</h3></div>
+          <div class="lienzo" id="gAnillo"></div>
+          <div id="pieAnillo"></div>
+        </div>
+      </div>
+
+      <div class="rejilla-panel mt">
+        <div>
+          <div class="tarjeta">
+            <div class="cab-tarjeta"><h3>Emprendedores que requieren atención</h3><a class="enlace" href="#cartera">Ver todos</a></div>
+            <div class="tabla-envoltura"><div id="tablaAtencion"></div></div>
+          </div>
+
+          <div class="rejilla-3 mt">
+            <div class="tarjeta">
+              <div class="cab-tarjeta"><h3>Distribución por categoría</h3></div>
+              <div class="dona"><div class="lienzo" id="gDona"></div><div class="dona-lista" id="listaDona"></div></div>
+            </div>
+            <div class="tarjeta">
+              <div class="cab-tarjeta"><h3>Últimos tickets</h3><a class="enlace" href="#tickets">Ver todos</a></div>
+              <div id="ultimosTickets"></div>
+            </div>
+          </div>
+        </div>
+
+        <aside>
+          <div class="tarjeta">
+            <div class="cab-tarjeta"><h3>Alertas recientes</h3><a class="enlace" href="#cartera">Ver todas</a></div>
+            <div class="lista-alertas" id="listaAlertas"></div>
+          </div>
+          <div class="tarjeta mt">
+            <div class="cab-tarjeta"><h3>Acciones rápidas</h3></div>
+            <div id="accionesRapidas"></div>
+          </div>
+          <div class="promo mt">
+            <span class="promo-icono" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18 10 12l3 3 7-9"/><path d="M15 6h5v5"/></svg></span>
+            <b>Un mejor futuro para más emprendedores</b>
+            <a class="btn primario" href="#tickets">Atender casos prioritarios</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ============ EMPRENDEDORES (CARTERA) ============ -->
+    <section class="vista" id="vista-cartera">
+      <div class="encabezado-vista"><div><h2>Emprendedores</h2><p class="sub">Estado calculado a partir de los registros de cada negocio. El semáforo se determina por reglas, no por el modelo.</p></div></div>
+      <div class="cifras kpis" id="cifrasPanel"></div>
+      <div class="filtros" id="filtros"></div>
+      <div class="tarjeta"><div class="tabla-envoltura"><div id="tablaCartera"></div></div></div>
+    </section>
+
+    <!-- ============ PERFIL DEL EMPRENDEDOR ============ -->
+    <section class="vista" id="vista-emprendedor">
+      <a class="volver" href="#cartera"><svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></svg>Volver a emprendedores</a>
+      <div id="perfilEmp"></div>
+    </section>
+
+    <!-- ============ TICKETS ============ -->
+    <section class="vista" id="vista-tickets">
+      <div class="encabezado-vista"><div><h2>Tickets de asistencia</h2><p class="sub">Ordenados por prioridad. La prioridad se calcula con la categoría, el semáforo y los días restantes del plazo.</p></div></div>
+      <div class="rejilla-bandeja">
+        <div class="col-bandeja"><div class="filtros filtros-estado" id="filtrosTk"></div><div id="listaTickets"></div></div>
+        <div class="tarjeta" id="detalleTicket"><div class="vacio"><span class="ic-vacio"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></span><strong>Sin ticket seleccionado</strong><p>Elige un ticket para ver el caso completo, generar el guion de la llamada y agendar el acompañamiento.</p></div></div>
+      </div>
+    </section>
+
+    <!-- ============ ACOMPAÑAMIENTO ============ -->
+    <section class="vista" id="vista-acompanamiento">
+      <div class="encabezado-vista"><div><h2>Acompañamiento</h2><p class="sub">Sesiones agendadas del plan de tres pasos: diagnóstico, material y plan, seguimiento.</p></div></div>
+      <div class="kpis" id="cifrasAcomp"></div>
+      <div class="filtros filtros-estado" id="filtrosAcomp"></div>
+      <div id="listaAcomp"></div>
+    </section>
+
+    <!-- ============ MATERIAL ============ -->
+    <section class="vista" id="vista-material">
+      <div class="encabezado-vista"><div><h2>Material educativo</h2><p class="sub">Contenido cargado en este equipo. Es la base con la que el mentor responde y con la que se arman los guiones.</p></div></div>
+      <div id="listaMaterial"></div>
+    </section>
+
+    <!-- ============ EVIDENCIA ============ -->
+    <section class="vista" id="vista-evidencia">
+      <div class="encabezado-vista"><div><h2>Evidencia</h2><p class="sub">Rendimiento de la inferencia local en este equipo.</p></div></div>
+      <div id="evidencia"></div>
+    </section>
+
+    <!-- ============ PORTAL EMPRENDEDOR ============ -->
+    <section class="vista" id="vista-panel">
+      <div class="encabezado-vista">
+        <div><h2 id="tituloNegocio">Mi negocio</h2><p class="sub" id="subNegocio"></p></div>
+        <select id="selEmp" class="sel-emp"></select>
+      </div>
+      <div id="semaforo"></div>
+      <div class="kpis" id="cifrasNegocio"></div>
+      <div class="rejilla-2">
+        <div class="tarjeta"><div class="cab-tarjeta"><h3>Ventas y gastos por semana</h3>
+          <div class="leyenda"><span><i style="background:var(--ok)"></i>Ventas</span><span><i style="background:var(--danger)"></i>Gastos</span></div></div>
+          <div class="lienzo" id="grafica"></div></div>
+        <div class="tarjeta"><div class="cab-tarjeta"><h3>Meta del préstamo</h3></div><div id="meta"></div></div>
+      </div>
+      <div class="tarjeta mt"><div class="cab-tarjeta"><h3>Últimos movimientos</h3></div><div class="tabla-envoltura"><div id="ultimosMov"></div></div></div>
+    </section>
+
+    <section class="vista" id="vista-registrar">
+      <div class="encabezado-vista"><div><h2>Registrar movimiento</h2><p class="sub">Anota cada venta y cada gasto el mismo día. Si tienes el recibo, tómale foto: se lee en este equipo.</p></div></div>
+      <div class="rejilla-3">
+        <form class="tarjeta" id="formMov" autocomplete="off">
+          <label>Tipo</label>
+          <div class="tipos"><button type="button" class="tipo activa" data-tipo="venta">Venta</button><button type="button" class="tipo" data-tipo="gasto">Gasto</button><button type="button" class="tipo" data-tipo="abono">Abono a la cuota</button></div>
+          <div class="fila"><div><label for="mvMonto">Monto (B/.)</label><input id="mvMonto" type="number" step="0.01" min="0" required></div><div><label for="mvFecha">Fecha</label><input id="mvFecha" type="date"></div></div>
+          <label for="mvConcepto">Concepto</label><input id="mvConcepto" placeholder="Ventas del día, compra de insumos…">
+          <button class="btn primario grande" type="submit">Registrar</button>
+          <div id="avisoMov"></div>
+        </form>
+        <div class="tarjeta">
+          <div class="cab-tarjeta"><h3>Registrar por foto del recibo</h3></div>
+          <div class="zona-foto" id="zonaFoto"><div><b>Tomar o subir foto</b><br><small>El recibo se procesa aquí; la imagen no se guarda.</small></div><img id="previa" alt="" hidden></div>
+          <input type="file" id="archivoFoto" accept="image/*" capture="environment" hidden>
+          <div class="lectura" id="lecturaRecibo" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="vista" id="vista-mentor">
+      <div class="encabezado-vista"><div><h2>Mentor</h2><p class="sub">Conoce tus números y el material del programa. Funciona sin internet.</p></div></div>
+      <div class="chat">
+        <div class="hilo" id="hilo"><div class="vacio"><span class="ic-vacio"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.5 8.5 0 0 1-9.1 8.5 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.1A8.5 8.5 0 1 1 21 11.5z"/></svg></span><strong>Empieza la conversación</strong><p>Pregunta lo que quieras: precios, margen, cómo conseguir clientes, cómo promocionar por WhatsApp. El mentor conoce tus números y funciona sin internet.</p></div></div>
+        <div>
+          <div class="sugerencias">
+            <button type="button" data-q="¿Cómo voy con mi negocio? Explícame mis números.">¿Cómo voy?</button>
+            <button type="button" data-q="Mi margen está bajo. ¿Qué puedo hacer para mejorarlo?">Mejorar el margen</button>
+            <button type="button" data-q="¿Cómo promociono mi negocio por WhatsApp sin gastar dinero?">Promocionar por WhatsApp</button>
+            <button type="button" data-q="¿Cuánto debo vender por semana para pagar la deuda a tiempo?">Ritmo para pagar</button>
+          </div>
+          <form class="entrada" id="formMentor" autocomplete="off"><input id="pregunta" placeholder="Escribe tu pregunta"><button type="submit" id="btnPreguntar">Preguntar</button></form>
+        </div>
+      </div>
+    </section>
+
+    <section class="vista" id="vista-ayuda">
+      <div class="encabezado-vista"><div><h2>Pedir ayuda</h2><p class="sub">Un agente del programa te contacta. Pedir ayuda temprano no afecta tu historial.</p></div></div>
+      <div class="rejilla-3">
+        <form class="tarjeta" id="formTicket" autocomplete="off">
+          <label for="tkCat">¿Qué está pasando?</label><select id="tkCat"></select>
+          <label for="tkMsg">Cuéntanos en tus palabras</label><textarea id="tkMsg" required placeholder="Ej: llevo dos meses vendiendo y no veo ganancia…"></textarea>
+          <button class="btn primario grande" type="submit">Enviar solicitud</button>
+          <p class="nota" id="avisoTicket"></p>
+        </form>
+        <div><h3 style="margin-bottom:12px">Mis solicitudes</h3><div id="misTickets"></div></div>
+      </div>
+    </section>
+
+    <!-- ============ ACERCA ============ -->
+    <section class="vista" id="vista-acerca">
+      <div class="encabezado-vista"><div><h2>Cómo funciona</h2></div></div>
+      <div class="prosa">
+        <p>IMPULSA acompaña a personas que recibieron capital semilla para iniciar un negocio. Tiene dos caras: la del emprendedor, que registra su negocio y consulta a un mentor que funciona sin internet, y la del agente del programa, que ve la cartera por riesgo y atiende los tickets.</p>
+        <h3>Tres capas, en este orden</h3>
+        <ul>
+          <li><b>Reglas del programa (código).</b> El semáforo y la prioridad de los tickets se calculan de forma determinista a partir de los registros: brecha entre avance de pago y avance del plazo, margen, tendencia de ventas, días sin vender, ritmo necesario. Cada alerta dice por qué se disparó.</li>
+          <li><b>Material del programa (RAG).</b> Se recuperan los fragmentos del contenido educativo que aplican, y solo se usan si superan el umbral de relevancia.</li>
+          <li><b>Modelo local (QVAC).</b> Redacta la orientación al emprendedor y el guion de asesoría para el agente, usando solo las cifras calculadas. No decide el semáforo ni promete crédito.</li>
+        </ul>
+        <h3>Por qué local</h3>
+        <ul>
+          <li>El emprendedor está en una comarca o un pueblo, muchas veces sin datos en el celular. La orientación tiene que funcionar igual.</li>
+          <li>Los registros del negocio y los datos personales no salen del dispositivo ni de la infraestructura del banco.</li>
+          <li>Sin costo por consulta: un mentor que responde mil veces al día cuesta lo mismo que uno que responde una.</li>
+        </ul>
+        <h3>Modelos en este equipo</h3><div id="modelosInfo"></div>
+        <h3>Alcance de esta versión</h3>
+        <ul>
+          <li>Datos sintéticos: 12 emprendedores ficticios con historial generado. No hay información de personas ni clientes reales.</li>
+          <li>El material del programa es de referencia, elaborado para el hackathon; no es material oficial de ninguna entidad.</li>
+          <li>El contacto por WhatsApp y la llamada se simulan: el sistema genera el guion y los datos de contacto.</li>
+          <li>No hay autenticación: el cambio entre agente y emprendedor es un selector, para efectos de demostración.</li>
+          <li>La interfaz no carga nada de internet: tipografía, iconos y gráficos están en este equipo. Se puede desconectar la red y todo sigue funcionando igual.</li>
+          <li>El acompañamiento se registra aquí: los tickets pasan por abierto, en atención y cerrado con su resultado, y cada sesión del plan se marca, se anota y se reprograma.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+MÓDULO 3. EL PROGRAMA DE MICROCRÉDITO Y LA ASISTENCIA. Documento de referencia elaborado para el hackathon; no corresponde a las condiciones reales de ninguna entidad.
+
+EN QUÉ CONSISTE EL PROGRAMA. El programa otorga capital semilla a personas que inician un pequeño emprendimiento, con plazos de seis a doce meses. El objetivo no es solo recuperar el préstamo: es que el negocio siga en pie cuando termine el plazo y pueda generar empleo.
+
+COMPROMISOS DEL EMPRENDEDOR. Usar el capital en el negocio para el que se solicitó. Registrar ventas y gastos en la herramienta del programa. Pagar la cuota mensual en la fecha acordada. Pedir asistencia cuando algo no vaya bien, sin esperar al vencimiento.
+
+CUÁNDO PEDIR ASISTENCIA. Pide asistencia si llevas más de tres semanas sin ventas, si tu margen está por debajo del 15%, si gastaste parte del capital en algo distinto al negocio, si no vas a poder pagar la próxima cuota, o si un problema personal o de salud está afectando la operación. Pedir asistencia temprano no penaliza ni afecta tu historial: al contrario, es lo que permite ayudarte.
+
+CÓMO FUNCIONA LA ASISTENCIA. Abres un ticket desde la aplicación indicando la categoría de tu caso. El ticket llega al panel de los agentes del programa, ordenado por prioridad. Un agente toma el caso y te contacta por teléfono o WhatsApp. No hay que llamar a un centro de atención ni esperar en línea.
+
+EL PLAN DE TRES SESIONES. El acompañamiento estándar son tres sesiones. La primera es de diagnóstico: se revisan tus números reales y qué ocurrió. La segunda es de material y plan: el agente te entrega el contenido del programa que aplica a tu caso y acuerdan acciones concretas. La tercera es de seguimiento: se revisan los avances, se ajusta el plan y se decide si tu caso requiere un arreglo de pago o capital adicional. Entre sesiones puedes consultar al mentor de la aplicación, que funciona sin internet.
+
+ARREGLO DE PAGO. Cuando el negocio no genera lo suficiente para la cuota actual, puede evaluarse un arreglo de pago que extienda el plazo y reduzca la cuota. No es automático ni lo decide la aplicación: lo evalúa el banco a partir del diagnóstico. Solicitarlo a tiempo, antes de caer en mora, siempre da más opciones.
+
+CAPITAL ADICIONAL. Un emprendedor con el negocio funcionando, pagos al día y registros completos puede solicitar capital adicional para crecer. Sin registros no hay forma de sustentar la solicitud: esa es otra razón para anotar cada movimiento.
+
+SEMÁFORO DE SEGUIMIENTO. La herramienta calcula un estado a partir de tus propios registros. Verde: el negocio avanza y el pago va acorde al plazo. Ámbar: hay señales que conviene corregir, como margen bajo, ventas en descenso o ritmo insuficiente. Rojo: hay riesgo real de no cumplir la meta, por pérdidas, plazo vencido, atraso grande frente al calendario de pago o ausencia prolongada de ventas. El estado no es un castigo ni afecta tu historial crediticio: es la señal que le dice al programa a quién acompañar primero.
+
+PRIVACIDAD. Tus registros y los datos de tu negocio se procesan en el dispositivo o en la infraestructura del banco. La orientación del mentor se genera localmente, sin enviar tu información a servicios externos, y funciona sin conexión a internet.
